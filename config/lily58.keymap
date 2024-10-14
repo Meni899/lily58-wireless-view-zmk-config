@@ -42,11 +42,11 @@
 
             display-name = "Lower";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans    &trans           &trans    &trans    &trans
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &kp F7     &kp F8    &kp F9           &kp F10   &kp F11   &kp F12
-&kp TILDE   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT                     &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp MINUS
-&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans     &trans    &trans           &trans    &trans    &trans
-                                        &trans        &trans        &trans        &trans    &trans  &trans     &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &tog 0     &tog 1    &tog 2           &tog 3    &none     &none
+&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                        &kp F7     &kp F8    &kp F9           &kp F10   &kp F11   &kp F12
+&kp TILDE   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT                   &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp MINUS
+&none       &none         &none         &none         &none         &none         &none    &none  &none      &none     &none            &none     &none     &none
+                                        &none         &none         &trans        &none    &none  &trans     &none     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -62,14 +62,24 @@
 
             display-name = "Raise";
             bindings = <
-&trans  &trans  &trans  &trans    &trans     &trans                    &trans  &trans          &trans          &trans     &trans  &trans
-&trans  &trans  &trans  &trans    &trans     &trans                    &trans  &trans          &kp UP_ARROW    &trans     &trans  &trans
-&trans  &trans  &trans  &kp PLUS  &kp EQUAL  &trans                    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans    &trans     &trans  &trans    &trans  &trans  &trans          &trans          &trans     &trans  &trans
-                        &trans    &trans     &trans  &trans    &trans  &trans  &trans          &trans
+&none  &none      &none      &none     &none      &none                   &none   &none           &none           &none      &none  &none
+&none  &none      &none      &none     &none      &none                   &none   &kp RC(U)       &kp UP_ARROW    &kp RC(O)  &none  &none
+&none  &kp RC(A)  &kp RC(S)  &kp PLUS  &kp EQUAL  &none                   &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &none  &none
+&none  &none      &none      &none     &none      &none   &none    &none  &none   &none           &none           &none      &none  &none
+                             &none     &none      &trans  &none    &none  &trans  &none           &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        GAME_LAYER {
+            bindings = <
+&trans  &trans  &trans  &trans     &trans   &trans                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans   &trans                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans   &trans                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans   &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &kp COMMA  &kp DOT  &kp FSLH  &trans    &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
